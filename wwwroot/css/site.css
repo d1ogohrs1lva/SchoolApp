@@ -1,0 +1,231 @@
+/*Estilo geral*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: auto;
+    height: auto;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-modeH3 {
+    background-color: white;
+    color: black;
+}
+
+/* Head -> 'Students' */
+
+#head {
+    position: relative;
+    width: auto;
+    height: 40px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    white-space: nowrap;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#head h3 {
+    position: absolute;
+    width: 80%;
+    margin-left: 10px;
+    padding-top: 2px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/*Input -> 'Search' */
+
+#searchContainer {
+    margin-top: -20px;
+}
+
+input {
+    border-radius: 4px;
+    width: 35%;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#search {
+    margin-left: 15px;
+    padding: 7px;
+    border: 1px solid green;
+    border-radius: 4px;
+    color: green;
+    cursor: pointer;
+}
+
+#search:hover {
+    color: white;
+    background-color: green;
+}
+
+/* div main - estilo geral */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#main div {
+    margin-bottom: 20px;
+}
+
+/* Table */
+
+#tableContainer {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: auto;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(238, 238, 238);
+}
+
+.grey-row {
+    background-color: rgb(238, 238, 238);
+}
+
+.white-row {
+    background-color: white !important;
+}
+
+#nrs {
+    font-weight: bold;
+}
+
+#c1 {
+    width: 40%;
+}
+
+#c2, #c3 {
+    width: 65%;
+}
+
+#c4 {
+    width: 50%;
+}
+
+#c5 {
+    width: 100%;
+}
+
+/* Buttons */
+
+#lightModeBt {
+    border: none;
+    background-color: white;
+}
+
+#create {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 190px;
+    height: 100%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    text-align: center;
+    text-decoration: none !important;
+    color: black;
+    white-space: nowrap;
+}
+
+#create a {
+    text-decoration: none !important;
+    color: black;
+    border: none;
+    background-color: white;
+}
+
+#create a:hover {
+    border-color: rgb(0, 119, 255);
+    font-weight: bold;
+}
+
+#nrs {
+    background-color: white !important;
+    color: black;
+    border: 1px solid #ddd !important;
+}
+
+#nrs:active {
+    background-color: rgb(0, 119, 255) !important;
+    border-color: rgb(0, 119, 255);
+    color: white;
+}
+#nrs:hover {
+    background-color: rgb(0, 119, 255) !important;
+    border-color: rgb(0, 119, 255);
+    color: white;
+}
+
+#pages {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+#prev {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: rgb(0, 119, 255) !important;
+    color: white;
+}
+
+#prev:hover {
+    color:black;
+}
+
+#next {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: rgb(0, 119, 255) !important;
+    border: none !important;
+    color: white;
+}
+
+#next:hover {
+    color: black;
+}

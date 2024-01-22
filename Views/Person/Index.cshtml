@@ -1,0 +1,93 @@
+﻿@model IEnumerable<SchoolApp.SchoolModels.Person>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div id="head">
+    <div id="headtitle">
+        <h3>Students</h3>
+    </div>
+    <div id="create">
+        <a asp-action="Create">Create New    <i class="fa-regular fa-square-plus fa-xl" style="color: rgb(39, 39, 39);"></i></a>
+    </div>
+</div>
+<div id="main">
+    <div id="searchContainer">
+        <input type="text" placeholder="Search" id="search-input">
+        <button id="search">Search</button>
+    </div>
+    <div id="tableContainer">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BirthDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RolesNavigation)
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @String.Format("{0:dd/MM/yyyy}", item.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RolesNavigation.Label)
+                    </td>
+                    <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-square-pen fa-2xl" style="color: #ea931a;"></i></a> |
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-regular fa-id-card fa-2xl" style="color: #1773a1;"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-square-minus fa-2xl" style="color: #e51515;"></i></a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+        <!-- pager -->
+        <div id="btn-group pages">
+            <!-- Prev btn -->
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, searchString = ViewBag.CurrentFilter})" class="button btn " id="prev">Previous</a>
+            }
+            else
+            {
+                <a class="button disabled btn " id="prev">Previous</a>
+            }
+            <!-- Nrs pagina -->
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <a href="@Url.Action("Index", new { page = i, searchString = ViewBag.CurrentFilter})" class="page-button btn @(ViewBag.CurrentPage == i ? "active-page" : "")" id="nrs">@i</a>
+            }
+            <!-- Next button -->
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, searchString = ViewBag.CurrentFilter})" class="button btn" id="next">Next</a>
+            }
+            else
+            {
+                <a class="button disabled btn" id="next">Next</a>
+            }
+        </div>
+
+    </div>
+</div>
